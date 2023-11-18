@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Roboto+Serif:opsz,wght@8..144,300&display=swap"
+        rel="stylesheet">
+    <style>
+        .dot {
+            --size: 1000px;
+            display: none;
+            position: absolute;
+            left: calc(var(--size) / 3 * -1);
+            top: calc(var(--size) / 3 * -1);
+            width: var(--size);
+            height: 5000px;
+            mix-blend-mode: soft-light;
+            filter: blur(calc(var(--size) / 6));
+            animation: dot-animation ease-in-out 20s infinite;
+            will-change: transform;
+        }
+
+        @supports (mix-blend-mode: soft-light) and (filter: blur(1px)) {
+            .animatedwrapper {
+                background: none;
+            }
+
+            .dot {
+                display: block;
+            }
+        }
+
+        .dot--one {
+            background: #bd3690;
+        }
+
+        .dot--two {
+            background: #f48937;
+            animation-delay: -7s;
+        }
+
+        .dot--three {
+            background: #ed2a24;
+            animation-delay: -1s;
+        }
+
+        @keyframes dot-animation {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            33% {
+                transform: translate(calc(var(--size) / 1.5), 0);
+            }
+
+            66% {
+                transform: translate(0, calc(var(--size) / 1.5));
+            }
+
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+
+
+
+        .navbar {
+            margin-top: 20px;
+            border-radius: 50px;
+            background-color: white;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .home-img {
+            width: 30px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            border-radius: 10px;
+        }
+
+        .animatedwrapper {
+            position: absolute;
+            top: -100px;
+            z-index: -1;
+            height: 5000px;
+            isolation: isolate;
+        }
+
+        .grid-container {
+            display: grid;
+
+            grid-template-rows: 300px 500px;
+            grid-template-columns: 1fr 1.5fr 275px;
+            gap: 20px;
+        }
+
+
+
+        .grid-container>div {
+            border-radius: 20px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            background-color: white;
+        }
+
+        .hero-one {
+            grid-area: 1/1/2/3;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Libre Baskerville', serif;
+            font-family: 'Roboto Serif', serif;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            font-size: 20px;
+            line-height: 56px;
+        }
+
+
+
+
+
+        .hero-two {
+            grid-area: 1/3/2/4;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.13), 0 6px 20px 0 rgba(0, 0, 0, 0.13);
+        }
+
+        .hero-three {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            grid-area: 2/1/3/2;
+            padding-top: 5%;
+        }
+
+
+
+        .hero-four {
+            grid-area: 2/2/3/4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .emoji {
+            position: relative;
+            height: 375px;
+            bottom: 20px;
+            right: 50px;
+        }
+
+        .for-flex {
+            display: flex;
+            height: 900px;
+            justify-content: center;
+            margin-top: 60px;
+        }
+
+
+
+
+        .main-word {
+            font-size: 4rem;
+        }
+
+        .curious {
+            margin-top: 30px;
+        }
+
+        .header-education {
+            display: flex;
+            flex-direction: column;
+            height: 300px;
+            justify-content: space-evenly;
+            align-items: center;
+            gap: 60px;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .experience-points {
+            margin-top: 2%;
+            display: flex;
+            flex-direction: column;
+            width: 82%;
+            text-align: justify;
+            height: 180px;
+        }
+
+
+        .main-words {
+            font-size: 1.25rem;
+            font-weight: bolder;
+        }
+
+        .d-flex {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .d-flex h4 {
+            width: 170px;
+        }
+
+        .hero-four span:hover {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.13), 0 6px 20px 0 rgba(0, 0, 0, 0.13);
+        }
+
+
+
+
+
+        @media(max-width:1200px) {
+
+            .navbar {
+                margin-top: 0px;
+                position: fixed;
+                border-radius: 50px;
+                background-color: white;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            }
+
+            .grid-container {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .hero-one {
+                display: flex;
+                padding: 20px
+            }
+
+            .main-word {
+                font-size: 45px;
+            }
+
+            .hero-two {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .emoji {
+                position: relative;
+                top: 3%;
+                left: 0.2%;
+            }
+
+            .hero-three {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding-bottom: 20px;
+            }
+
+            .d-flex h4 {
+
+                width: 140px;
+            }
+
+            .animatedwrapper {
+                top: -500px;
+            }
+
+            .dot {
+                --size: 100px;
+            }
+
+            .dot {
+                --size: 600px;
+            }
+
+            .section-2 {
+                margin-top: 950px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="flex-nav">
+            <nav class="navbar navbar-expand-lg ">
+                <div class="container-fluid">
+                    <a class="home-img" href="http://127.0.0.1:3000/capston2/index.html"><img src="./Image.png"
+                            height="30px"></a>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Link</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    Dropdown
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div>
+            <div class="for-flex">
+                <div class="grid-container">
+                    <div class="hero-one">
+                        <div class="heading">
+                            <p>Hello, I’m <span class="main-word">Chy</span>(chaitanya krishna).</p>
+                            <p>And I am <span class="main-word">a Software Engineer.</span></p>
+                        </div>
+                    </div>
+                    <div class="hero-two">
+                        <img class="emoji" src="./Image 2.png">
+                    </div>
+                    <div class="hero-three ">
+                        <span
+                            class="badge d-flex align-items-center mt-3 text-warning-emphasis bg-warning-subtle border border-warning-subtle rounded-pill">
+                            <img class="rounded-circle me-2" width="44" height="44" src="./Image 3.png" alt="">
+                            <a class="nav-link active" href="#about"><h2 class="mt-2 ">Education:-</h2></a>
+                        </span>
+
+                        <div class="header-education">
+                            <div>
+                                <h2>Masters of Science</h2>
+                                <h4>
+                                    Computer and Information Science-(Information Quality)
+                                </h4>
+                                <h6>(2021)-(2023)</h6>
+                            </div>
+                            <div>
+                                <h2>B-Tech</h2>
+                                <h4>
+                                    Electronics and Communication(ECE)
+                                </h4>
+                                <h6>(2016)-(2020)</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-four">
+                        <span
+                            class="badge d-flex align-items-center mt-3 text-info-emphasis bg-info-subtle border border-info-subtle rounded-pill">
+                            <img class="rounded-circle me-2" width="44" height="44" src="./Image 4.png" alt="">
+                            <h2 class="mt-2">Experence:-</h2>
+                        </span>
+
+
+                        <div class="experience-points">
+                            <h4>I have 3 years’ experience as a Software Engineer.</h4>
+                            <p class="matter"> I've had the opportunity to explore various roles. I started my career as
+                                a
+                                <span class="main-words">Software Engineer</span> at
+                                <span class="main-words">Capgemini</span> . Later, I moved to the United States to
+                                pursue a
+                                Master's degree in<span class="main-words"> Computer
+                                    and Information Science</span> with a specialization in Information Quality.
+                                Currently,
+                                I work
+                                as a <span class="main-words">Software Engineer at TEKhops</span>, a startup where I
+                                continue to grow and contribute to
+                                the field of software development.
+                            </p>
+                        </div>
+                        <div class="all-points">
+                            <div class="d-flex  justify-content-center gap-5 py-5">
+
+                                <span
+                                    class="badge bg-success-subtle border border-success-subtle text-success-emphasis rounded-pill pt-2">
+                                    <h4>Skills</h4>
+                                </span>
+                                <span
+                                    class="badge bg-danger-subtle border border-danger-subtle text-danger-emphasis rounded-pill pt-2">
+                                    <h4>Certificates</h4>
+                                </span>
+                                <span
+                                    class="badge bg-dark-subtle border border-dark-subtle text-dark-emphasis rounded-pill pt-2">
+                                    <h4>Git</h4>
+                                </span>
+
+
+                                <span
+                                    class="badge bg-primary-subtle border border-primary-subtle text-primary-emphasis rounded-pill pt-2">
+                                    <h4>Projects</h4>
+                                </span>
+                                <span
+                                    class="badge bg-info-subtle border border-info-subtle text-info-emphasis rounded-pill pt-2">
+                                    <h4>LinkedIn</h4>
+                                </span>
+                                <span
+                                    class="badge bg-light-subtle border border-light-subtle text-light-emphasis rounded-pill pt-2">
+                                    <h4>Contact Info</h4>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class= section-2>
+        <div class="container my-5">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb breadcrumb-custom overflow-hidden text-center bg-body-tertiary border rounded-3">
+                    <li class="breadcrumb-item">
+                        <a class="link-body-emphasis fw-semibold text-decoration-none" href="#">
+                            <svg class="bi" width="16" height="16">
+                                <use xlink:href="#house-door-fill"></use>
+                            </svg>
+                            Experence
+                        </a>
+
+                </ol>
+            </nav>
+        </div >
+        <div class="container my-5">
+            <div class="px-4 py-5 my-5 text-center shadow-sm  card">
+                <h1 class="display-5 fw-bold text-body-emphasis">Centered hero</h1>
+                <div class="col-lg-6 mx-auto">
+                    <p class="lead mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the
+                        world’s most popular front-end open source toolkit, featuring Sass variables and mixins,
+                        responsive
+                        grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+                    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                        <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Primary button</button>
+                        <button type="button" class="btn btn-outline-secondary btn-lg px-4">Secondary</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container my-5">
+            <div class="px-4 py-5 my-5 text-center shadow-sm  card">
+                <h1 class="display-5 fw-bold text-body-emphasis">Centered hero</h1>
+                <div class="col-lg-6 mx-auto">
+                    <p class="lead mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the
+                        world’s most popular front-end open source toolkit, featuring Sass variables and mixins,
+                        responsive
+                        grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+                    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                        <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Primary button</button>
+                        <button type="button" class="btn btn-outline-secondary btn-lg px-4">Secondary</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container my-5 pt-5">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb breadcrumb-custom overflow-hidden text-center bg-body-tertiary border rounded-3">
+                    <li class="breadcrumb-item">
+                        <a class="link-body-emphasis fw-semibold text-decoration-none" href="#">
+                            <svg class="bi" width="16" height="16">
+                                <use xlink:href="#house-door-fill"></use>
+                            </svg>
+                            Education
+                        </a>
+
+                </ol>
+            </nav>
+        </div>
+        <div class="container my-5">
+            <div class="px-4 py-5 my-5 text-center shadow-sm  card">
+                <h1 class="display-5 fw-bold text-body-emphasis">Centered hero</h1>
+                <div class="col-lg-6 mx-auto">
+                    <p class="lead mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the
+                        world’s most popular front-end open source toolkit, featuring Sass variables and mixins,
+                        responsive
+                        grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+                    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                        <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Primary button</button>
+                        <button type="button" class="btn btn-outline-secondary btn-lg px-4">Secondary</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container my-5">
+            <div class="px-4 py-5 my-5 text-center shadow-sm  card">
+                <h1 class="display-5 fw-bold text-body-emphasis">Centered hero</h1>
+                <div class="col-lg-6 mx-auto">
+                    <p class="lead mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the
+                        world’s most popular front-end open source toolkit, featuring Sass variables and mixins,
+                        responsive
+                        grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+                    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                        <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Primary button</button>
+                        <button type="button" class="btn btn-outline-secondary btn-lg px-4">Secondary</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container my-5">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-custom overflow-hidden text-center bg-body-tertiary border rounded-3">
+                <li class="breadcrumb-item">
+                    <a class="link-body-emphasis fw-semibold text-decoration-none" href="#">
+                        <svg class="bi" width="16" height="16">
+                            <use xlink:href="#house-door-fill"></use>
+                        </svg>
+                        Certificates
+                    </a>
+
+            </ol>
+        </nav>
+    </div >
+    <div class="album  ">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="./Angular.png">
+                        <div class="card-body">
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                </div>
+                                <small class="text-body-secondary">9 mins</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card shadow-sm ">
+                        <img src="./AWS & Cloud Computing.png">
+                        <div class="card-body">
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                </div>
+                                <small class="text-body-secondary">9 mins</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="./Java Multithreading.png">
+                        <div class="card-body">
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                </div>
+                                <small class="text-body-secondary">9 mins</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="./Java Programming Masterclass.png">
+                        <div class="card-body">
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                </div>
+                                <small class="text-body-secondary">9 mins</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="./Java Programming Masterclass.png">
+                        <div class="card-body">
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                </div>
+                                <small class="text-body-secondary">9 mins</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="./Java Programming Masterclass.png">
+                        <div class="card-body">
+                            <p class="card-text">This is a wider card with supporting text below as a natural
+                                lead-in to additional content. This content is a little bit longer.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                </div>
+                                <small class="text-body-secondary">9 mins</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="animatedwrapper">
+        <div class="dot dot--one"></div>
+        <div class="dot dot--two"></div>
+        <div class="dot dot--three"></div>
+    </div>
+
+    </div>
+</body>
+
+</html>
